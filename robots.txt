@@ -1,0 +1,126 @@
+# ============================================
+# ROBOTS.TXT FAILS - MYHOTSLOTS.COM
+# ============================================
+# Pēdējā atjaunināšana: 2026. gada 28. janvāris
+# Mērķis: Optimizēta meklētājprogrammu piekļuve
+# ============================================
+
+# ===========================================
+# VISPĀRĒJIE NOTEIKUMI VISĀM MEKLĒTĀJPROGRAMMĀM
+# ===========================================
+User-agent: *
+Allow: /
+
+# Piekļuves ātrums - 1 sekunde starp pieprasījumiem
+Crawl-delay: 1
+
+# ===========================================
+# ATĻAUT SVARĪGUS FAILUS (pirms Disallow noteikumiem)
+# ===========================================
+Allow: /sitemap.xml
+Allow: /*.css
+Allow: /*.css?*
+Allow: /*.js
+Allow: /*.js?*
+
+# ===========================================
+# BLOĶĒT PRIVĀTĀS UN ADMIN ZONAS
+# ===========================================
+# Aizsargā administratīvās lapas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# ===========================================
+# BLOĶĒT MEKLĒŠANAS REZULTĀTUS
+# ===========================================
+Disallow: /search
+Disallow: /*?s=
+Disallow: /*&s=
+
+# ===========================================
+# BLOĶĒT SISTĒMAS FAILUS
+# ===========================================
+# Aizsargā tehniskos un konfigurācijas failus
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /.htaccess
+Disallow: /.git/
+
+# ===========================================
+# GOOGLE BOT ĪPAŠIE NOTEIKUMI
+# ===========================================
+# Google optimizācija - nav crawl delay
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Googlebot attēliem
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# ===========================================
+# BING BOT NOTEIKUMI
+# ===========================================
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# ===========================================
+# YAHOO BOT NOTEIKUMI
+# ===========================================
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# ===========================================
+# YANDEX BOT NOTEIKUMI
+# ===========================================
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# ===========================================
+# BAIDU BOT NOTEIKUMI
+# ===========================================
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# ===========================================
+# BLOĶĒT SLIKTOS/SPAM BOTUS
+# ===========================================
+# Agresīvi vai nevēlami boti
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+# ===========================================
+# SITEMAP ATRAŠANĀS VIETAS
+# ===========================================
+# Norāda, kur atrodas jūsu XML sitemap faili
+Sitemap: https://myhotslots.com/sitemap.xml
+Sitemap: https://myhotslots.com/sitemap-images.xml
+
+# ===========================================
+# PAPILDU PIEZĪMES
+# ===========================================
+# 1. Augšupielādējiet šo failu uz savu servera saknes direktoriju
+# 2. Pārliecinieties, ka fails ir pieejams: https://myhotslots.com/robots.txt
+# 3. Testējiet: https://www.google.com/webmasters/tools/robots-testing-tool
+# 4. Pēc augšupielādes, validējiet Google Search Console
+# ============================================

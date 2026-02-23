@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================ -->
+<!-- 404 ERROR PAGE - MYHOTSLOTS.COM -->
+<!-- ============================================ -->
+<!-- Profesionāla, lietotājam draudzīga 404 lapa -->
+<!-- ============================================ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Title un meta tags -->
+    <title>404 - Page Not Found | MyHotSlots</title>
+    <meta name="description" content="This page could not be found. Browse our casino reviews, bonuses, and more on MyHotSlots.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================ */
+        /* RESET UN PAMATA STILI */
+        /* ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* ============================================ */
+        /* GALVENAIS CONTAINER */
+        /* ============================================ */
+        .error-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================ */
+        /* LOGO */
+        /* ============================================ */
+        .logo {
+            margin-bottom: 40px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================ */
+        /* 404 NUMURS */
+        /* ============================================ */
+        .error-code {
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive 404 */
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 6rem;
+            }
+        }
+
+        /* ============================================ */
+        /* ERROR ZIŅOJUMS */
+        /* ============================================ */
+        .error-message {
+            margin-bottom: 40px;
+        }
+
+        .error-message h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .error-message p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 10px;
+        }
+
+        @media (max-width: 600px) {
+            .error-message h2 {
+                font-size: 1.5rem;
+            }
+            .error-message p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ============================================ */
+        /* SEARCH BOX */
+        /* ============================================ */
+        .search-box {
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .search-button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #ffd700;
+            color: #333;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .search-form {
+                flex-direction: column;
+            }
+        }
+
+        /* ============================================ */
+        /* SAITES UN POGAS */
+        /* ============================================ */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            border-color: #fff;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ============================================ */
+        /* POPULAR PAGES */
+        /* ============================================ */
+        .popular-pages {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .popular-pages h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            text-align: left;
+        }
+
+        .page-link {
+            display: block;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .page-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+            border-color: #ffd700;
+        }
+
+        .page-link span {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .page-link strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .page-link small {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================ */
+        /* FOOTER */
+        /* ============================================ */
+        .error-footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .error-footer p {
+            margin-bottom: 10px;
+        }
+
+        .error-footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .error-footer a:hover {
+            color: #ffed4e;
+            text-decoration: underline;
+        }
+
+        /* ============================================ */
+        /* ANIMATIONS */
+        /* ============================================ */
+        .slot-icon {
+            display: inline-block;
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <h1>My<span>Hot</span>Slots</h1>
+        </div>
+
+        <!-- 404 kods -->
+        <div class="error-code">404</div>
+
+        <!-- Slot machine icon -->
+        <div class="slot-icon">🎰</div>
+
+        <!-- Error ziņojums -->
+        <div class="error-message">
+            <h2>Oops! This Page Hit the Jackpot... and Disappeared!</h2>
+            <p>The page you're looking for couldn't be found. It might have been moved, deleted, or never existed.</p>
+            <p>But don't worry - we have plenty of hot slots and casinos waiting for you!</p>
+        </div>
+
+        <!-- Meklēšanas lauks -->
+        <div class="search-box">
+            <form class="search-form" action="/search" method="get">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="search-input" 
+                    placeholder="Search for casinos, bonuses, reviews..." 
+                    aria-label="Search"
+                >
+                <button type="submit" class="search-button">🔍 Search</button>
+            </form>
+        </div>
+
+        <!-- Galvenās saites -->
+        <div class="quick-links">
+            <a href="https://myhotslots.com/" class="btn btn-primary">🏠 Back to Home</a>
+            <a href="https://myhotslots.com/bonuses/" class="btn btn-secondary">🎁 View Bonuses</a>
+            <a href="https://myhotslots.com/reviews/" class="btn btn-secondary">⭐ Casino Reviews</a>
+        </div>
+
+        <!-- Populārās lapas -->
+        <div class="popular-pages">
+            <h3>🔥 Popular Pages You Might Like</h3>
+            <div class="pages-grid">
+                
+                <a href="https://myhotslots.com/reviews/green-luck-casino.html" class="page-link">
+                    <span>⭐</span>
+                    <strong>Green Luck Casino</strong>
+                    <small>4.9/5 - Lowest 1x wagering</small>
+                </a>
+
+                <a href="https://myhotslots.com/bonuses/" class="page-link">
+                    <span>🎁</span>
+                    <strong>Best Casino Bonuses</strong>
+                    <small>Exclusive deals & free spins</small>
+                </a>
+
+                <a href="https://myhotslots.com/casinos/" class="page-link">
+                    <span>🎰</span>
+                    <strong>All Casinos</strong>
+                    <small>Complete casino directory</small>
+                </a>
+
+                <a href="https://myhotslots.com/news/news.html" class="page-link">
+                    <span>📰</span>
+                    <strong>Latest News</strong>
+                    <small>Casino news & updates</small>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="error-footer">
+            <p><strong>Need help?</strong> <a href="https://myhotslots.com/contact/">Contact us</a> and we'll assist you.</p>
+            <p>© 2026 MyHotSlots. All rights reserved.</p>
+            <p>
+                <a href="https://myhotslots.com/privacy-policy/">Privacy Policy</a> | 
+                <a href="https://myhotslots.com/terms-and-conditions/">Terms & Conditions</a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT (Optional) -->
+    <!-- ============================================ -->
+    <script>
+        // Automātiska URL kļūdas ziņošana (optional)
+        // Nosūta notikumu Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_not_found', {
+                'page_location': window.location.href,
+                'page_referrer': document.referrer
+            });
+        }
+
+        // Console log ar emoji (optional)
+        console.log('%c🎰 404 Error - Page Not Found', 'font-size: 20px; color: #667eea; font-weight: bold;');
+        console.log('%cLooking for something? Visit https://myhotslots.com/', 'font-size: 14px; color: #764ba2;');
+    </script>
+
+</body>
+</html>
+
+<!-- ============================================ -->
+<!-- INSTRUKCIJAS IZMANTOŠANAI -->
+<!-- ============================================ -->
+<!--
+
+╔═══════════════════════════════════════════════╗
+║ KĀ IESTATĪT 404 KĻŪDAS LAPU                   ║
+╚═══════════════════════════════════════════════╝
+
+1️⃣ AUGŠUPIELĀDE
+   ─────────────────────────────────────────────
+   Augšupielādējiet šo failu kā "404.html" uz 
+   jūsu servera saknes direktoriju:
+   
+   • public_html/404.html
+   • www/404.html
+   • htdocs/404.html
+
+
+2️⃣ .HTACCESS KONFIGURĀCIJA (Apache)
+   ─────────────────────────────────────────────
+   Pievienojiet .htaccess failam:
+   
+   ErrorDocument 404 /404.html
+   
+   (Šis ir jau iekļauts htaccess_redirects.txt)
+
+
+3️⃣ NGINX KONFIGURĀCIJA
+   ─────────────────────────────────────────────
+   Pievienojiet nginx.conf vai site.conf:
+   
+   error_page 404 /404.html;
+   
+   location = /404.html {
+       internal;
+   }
+
+
+4️⃣ WORDPRESS LIETOTĀJIEM
+   ─────────────────────────────────────────────
+   WordPress automātiski izmanto template:
+   404.php
+   
+   Ja vēlaties izmantot šo HTML versiju:
+   
+   OPCIJA A: Pārsauciet uz 404.php un pielāgojiet
+   OPCIJA B: Izveidojiet custom 404 page un 
+             izmantojiet redirect plugin
+
+
+5️⃣ TESTĒŠANA
+   ─────────────────────────────────────────────
+   Pārbaudiet 404 lapu:
+   
+   https://myhotslots.com/neeksistejosa-lapa
+   https://myhotslots.com/test-404
+   https://myhotslots.com/xyz123
+   
+   ✅ Jāparādās jūsu pielāgotajai 404 lapai
+   ❌ Nedrīkst parādīties servera default 404
+
+
+6️⃣ PIELĀGOŠANA
+   ─────────────────────────────────────────────
+   
+   LOGO:
+   • Mainiet <h1> saturu uz savu logo
+   • Vai pievienojiet <img> ar logo attēlu
+   
+   KRĀSAS:
+   • background: gradient krāsas
+   • .btn-primary: pogu krāsas
+   • .logo span: akcenta krāsa
+   
+   SAITES:
+   • Atjauniniet visus href linku URL
+   • Pievienojiet vai noņemiet popular pages
+   
+   SEARCH:
+   • Atjauniniet action="/search" uz savu 
+     meklēšanas funkcionalitāti
+   • Vai noņemiet, ja nav search
+
+
+7️⃣ SEO LABĀKĀS PRAKSES
+   ─────────────────────────────────────────────
+   
+   ✅ Atgriež 404 HTTP status code
+   ✅ Iekļauj "noindex, nofollow" meta tag
+   ✅ Piedāvā alternatīvas navigācijas opcijas
+   ✅ Meklēšanas funkcionalitāte
+   ✅ Saites uz populārām lapām
+   ✅ Kontakta informācija
+   ✅ Konsekvents branding
+
+
+8️⃣ GOOGLE ANALYTICS INTEGRĀCIJA
+   ─────────────────────────────────────────────
+   
+   404 lapā jau ir JavaScript, kas nosūta 
+   'page_not_found' event uz Google Analytics.
+   
+   Pievienojiet savu GA tracking code pirms 
+   </head> taga.
+
+
+9️⃣ MULTI-VALODU VERSIJAS
+   ─────────────────────────────────────────────
+   
+   Ja jums ir vairākas valodu versijas:
+   
+   • 404.html (English)
+   • 404-fr.html (French)
+   • 404-es.html (Spanish)
+   
+   .htaccess konfigurācija ar language detection.
+
+
+🔟 PAPILDU UZLABOJUMI
+   ─────────────────────────────────────────────
+   
+   • Pievienojiet "Report Broken Link" pogu
+   • Integrējiet chatbot
+   • Rādiet trending casino bonuses
+   • Pievienojiet gamification (spin wheel)
+   • A/B testējiet dažādas 404 versijas
+
+═════════════════════════════════════════════════
+
+PIEZĪMES:
+
+• Šī 404 lapa ir pilnībā responsive (mobile-friendly)
+• Nav atkarīga no ārējiem CSS/JS failiem
+• Ātri ielādējas ar inline CSS
+• Draudzīga un engagement-fokusēta
+• Iekļauj MyHotSlots branding un casino tēmu
+
+═════════════════════════════════════════════════
+-->

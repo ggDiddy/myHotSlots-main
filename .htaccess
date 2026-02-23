@@ -1,0 +1,353 @@
+# ============================================
+# .HTACCESS KONFIGURĀCIJA - MYHOTSLOTS.COM
+# ============================================
+# Pēdējā atjaunināšana: 2026. gada 28. janvāris
+# Apache serveris - URL redirects un optimizācijas
+# ============================================
+
+# ============================================
+# 1. IESLĒGT REWRITE ENGINE
+# ============================================
+RewriteEngine On
+RewriteBase /
+
+# ============================================
+# 2. HTTPS PIESPIEDU PĀRADRESĀCIJA
+# ============================================
+# Pāradresē visus HTTP pieprasījumus uz HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ============================================
+# 3. WWW vs NON-WWW NORMALIZĀCIJA
+# ============================================
+# Izvēlieties VIENU versiju (ar www vai bez)
+# Ieteikums myhotslots.com: BEZ www
+
+# OPCIJA A: Noņemt www (IETEICAMS myhotslots.com)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# OPCIJA B: Pievienot www (ja vēlaties izmantot www versiju)
+# Atkomentējiet šo, ja vēlaties www.myhotslots.com
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} !^localhost [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# ============================================
+# 4. TRAILING SLASH NORMALIZĀCIJA
+# ============================================
+# Pievienot trailing slash direktorijām (konsistence)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteCond %{REQUEST_URI} !.*\.html$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+# ============================================
+# 5. /INDEX.HTML NOŅEMŠANA
+# ============================================
+# Redirect /index.html uz / (root)
+RewriteCond %{THE_REQUEST} ^.*/index\.html
+RewriteRule ^(.*)index\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ============================================
+# 6. 301 REDIRECTS VECAJIEM/IZDZĒSTAJIEM URL
+# ============================================
+# Šīs lapas rada 404 kļūdas Google Search Console
+
+# Casino reviews vecais URL
+Redirect 301 /casino-reviews/ https://myhotslots.com/reviews/
+Redirect 301 /casino-reviews https://myhotslots.com/reviews/
+
+# Bonus kategoriju vecākie URL
+Redirect 301 /bonuses/no-deposit/ https://myhotslots.com/bonuses/
+Redirect 301 /bonuses/no-deposit https://myhotslots.com/bonuses/
+Redirect 301 /bonuses/free-spins/ https://myhotslots.com/bonuses/
+Redirect 301 /bonuses/free-spins https://myhotslots.com/bonuses/
+
+# Blog vecais URL (tagad ir News)
+Redirect 301 /blog/ https://myhotslots.com/news/news.html
+Redirect 301 /blog https://myhotslots.com/news/news.html
+
+# Specific bonus kategorijas (ja tādas bija)
+Redirect 301 /bonuses/welcome-bonus/ https://myhotslots.com/bonuses/
+Redirect 301 /bonuses/cashback/ https://myhotslots.com/bonuses/
+Redirect 301 /bonuses/reload/ https://myhotslots.com/bonuses/
+
+# Vecās casino lapas (ja URL struktūra ir mainījusies)
+# Redirect 301 /casino/green-luck/ https://myhotslots.com/reviews/green-luck-casino.html
+
+# ============================================
+# 7. URL BEZ TRAILING SLASH REDIRECTS
+# ============================================
+# Konkrēti redirect galalietotāju meklētajiem URL
+
+# /bonuses (bez slash) → /bonuses/ (ar slash)
+Redirect 301 /bonuses https://myhotslots.com/bonuses/
+
+# /reviews (bez slash) → /reviews/ (ar slash)
+Redirect 301 /reviews https://myhotslots.com/reviews/
+
+# /casinos (bez slash) → /casinos/ (ar slash)
+Redirect 301 /casinos https://myhotslots.com/casinos/
+
+# /about - redirect uz sākumlapu (lapa neeksistē)
+Redirect 301 /about https://myhotslots.com/
+Redirect 301 /about/ https://myhotslots.com/
+
+# /contact - redirect uz contact sekciju (lapa neeksistē)
+Redirect 301 /contact https://myhotslots.com/#contact
+Redirect 301 /contact/ https://myhotslots.com/#contact
+
+# /news (bez slash) → /news/ (redirect uz news.html)
+# Redirect 301 /news https://myhotslots.com/news/
+
+# ============================================
+# 8. PAPILDU REDIRECTS (Pielāgojiet pēc vajadzības)
+# ============================================
+
+# Vecā sitemap versija (ja tāda bija)
+# Redirect 301 /sitemap_old.xml https://myhotslots.com/sitemap.xml
+
+# Vecā RSS feed (ja bija)
+# Redirect 301 /rss/ https://myhotslots.com/news/news.html
+# Redirect 301 /feed/ https://myhotslots.com/news/news.html
+
+# Admin vai login lapas (ja pārvietoja)
+# Redirect 301 /admin/ https://myhotslots.com/wp-admin/
+# Redirect 301 /login/ https://myhotslots.com/wp-login.php
+
+# ============================================
+# 9. 404 KĻŪDAS LAPAS IESTATĪŠANA
+# ============================================
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 500 /500.html
+
+# ============================================
+# 10. BROWSER CACHING
+# ============================================
+# Paātrina lapas ielādi atkārtotiem apmeklētājiem
+
+<IfModule mod_expires.c>
+    # Ieslēgt Expires
+    ExpiresActive On
+    
+    # Noklusējuma expires laiks
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML un datu faili
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType application/xhtml+xml "access plus 1 hour"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+    ExpiresByType application/json "access plus 1 hour"
+    
+    # CSS un JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # Attēli
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Video
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    
+    # Fonti
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # Favicon
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+</IfModule>
+
+# ============================================
+# 11. GZIP COMPRESSION
+# ============================================
+# Saspiež failus, lai paātrinātu ielādi
+
+<IfModule mod_deflate.c>
+    # Saspiež teksta failus
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    
+    # Izņēmumi (nesaspiež jau saspiestus)
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|zip|gz|rar)$ no-gzip dont-vary
+    
+    # Browser compatibility
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    
+    # Pievienot Vary: Accept-Encoding header
+    Header append Vary Accept-Encoding
+</IfModule>
+
+# ============================================
+# 12. DROŠĪBAS UZLABOJUMI
+# ============================================
+
+# Novērst direktoru browsing
+Options -Indexes
+
+# Aizsargāt .htaccess failu
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Aizsargāt wp-config.php (ja izmantojat WordPress)
+<Files wp-config.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Bloķēt piekļuvi XML-RPC (WordPress)
+<Files xmlrpc.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Novērst PHP failu izpildi uploads direktorijā
+# <Directory "/home/path/to/uploads">
+#     php_flag engine off
+# </Directory>
+
+# ============================================
+# 13. CHARSET UN MIME TYPE IESTATĪJUMI
+# ============================================
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+
+# ============================================
+# 14. HEADERS OPTIMIZĀCIJA
+# ============================================
+<IfModule mod_headers.c>
+    # Pievienot Vary: Accept-Encoding
+    Header append Vary: Accept-Encoding
+    
+    # X-Content-Type-Options
+    Header set X-Content-Type-Options "nosniff"
+    
+    # X-Frame-Options (aizsargā no clickjacking)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # X-XSS-Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy (ierobežo browser features)
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ============================================
+# 15. ETags IZSLĒGŠANA (Uzlabo caching)
+# ============================================
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ============================================
+# 16. PIELĀGOTA 404 LAPA
+# ============================================
+# Skatiet 404.html failu
+ErrorDocument 404 /404.html
+
+# ============================================
+# INSTRUKCIJAS IZMANTOŠANAI
+# ============================================
+# 
+# 1. FAILA NOSAUKUMS:
+#    Pārsauciet šo failu uz ".htaccess" (ar punktu sākumā)
+#    Pilns nosaukums: .htaccess
+#
+# 2. AUGŠUPIELĀDE:
+#    - Augšupielādējiet uz jūsu servera SAKNES direktoriju
+#    - Parasti: public_html/ vai www/ vai htdocs/
+#    - URL būs pieejams: https://myhotslots.com/.htaccess
+#
+# 3. TESTĒŠANA:
+#    Pēc augšupielādes, testējiet:
+#    
+#    a) HTTPS redirect:
+#       http://myhotslots.com → https://myhotslots.com
+#    
+#    b) WWW redirect:
+#       https://www.myhotslots.com → https://myhotslots.com
+#    
+#    c) Trailing slash:
+#       https://myhotslots.com/bonuses → https://myhotslots.com/bonuses/
+#    
+#    d) /index.html removal:
+#       https://myhotslots.com/index.html → https://myhotslots.com/
+#    
+#    e) 301 redirects:
+#       https://myhotslots.com/blog/ → https://myhotslots.com/news/news.html
+#
+# 4. VALIDĀCIJA GOOGLE SEARCH CONSOLE:
+#    - Dodieties uz GSC → Pages → Not found (404)
+#    - Noklikšķiniet "VALIDATE FIX"
+#    - Google pārbaudīs 1-2 nedēļu laikā
+#
+# 5. REDIRECT CHECKER TOOLS:
+#    - https://httpstatus.io/
+#    - https://www.redirect-checker.org/
+#    - https://www.internetmarketingninjas.com/tools/redirect-check/
+#
+# 6. CACHING TESTĒŠANA:
+#    - https://gtmetrix.com/
+#    - https://pagespeed.web.dev/
+#    - https://tools.pingdom.com/
+#
+# 7. BACKUP:
+#    Pirms izmantošanas, izveidojiet backup no esošā .htaccess!
+#
+# 8. KĻŪMJU LABOŠANA:
+#    Ja lapa nedarbojas pēc .htaccess pievienošanas:
+#    - Pārbaudiet, vai mod_rewrite ir ieslēgts serverī
+#    - Pārbaudiet syntax kļūdas
+#    - Skatiet server error logs
+#    - Atjaunojiet backup versiju
+#
+# 9. NGINX LIETOTĀJIEM:
+#    Ja jūsu serveris ir Nginx (nevis Apache),
+#    šis fails NEDARBOJAS. Izmantojiet nginx.conf
+#    Sazinieties ar hosting atbalstu par Nginx konfigurāciju.
+#
+# ============================================
+# PIEZĪMES
+# ============================================
+# 
+# - Šis fails ir APACHE serveriem
+# - Pārliecinieties, ka jūsu hosting atbalsta .htaccess
+# - Daži shared hosting var ierobežot noteiktas direktīvas
+# - Ja rodas 500 Internal Server Error, komentējiet
+#   problēmatikas sekcijas ar # simbolu
+# - Vienmēr testējiet pēc izmaiņām!
+#
+# ============================================

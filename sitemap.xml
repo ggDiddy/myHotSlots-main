@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- SITEMAP.XML - MYHOTSLOTS.COM -->
+<!-- ============================================ -->
+<!-- Pēdējā atjaunināšana: 2026-02-23 -->
+<!-- Kopējais lapu skaits: 14 -->
+<!-- ============================================ -->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- ============================================ -->
+    <!-- SĀKUMLAPA - Augstākā prioritāte -->
+    <!-- ============================================ -->
+    <url>
+        <loc>https://myhotslots.com/</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://play-lh.googleusercontent.com/VbG9gld3_vZ3imAFd5vVQWWoP727nHwzdb86eVlgXmIj9SJLzpAOWwMxVpRDoUxeV7k=w240-h480-rw</image:loc>
+            <image:title>MyHotSlots - Casino Reviews &amp; Bonuses</image:title>
+        </image:image>
+    </url>
+
+    <!-- ============================================ -->
+    <!-- GALVENĀS SEKCIJAS - Augsta prioritāte -->
+    <!-- ============================================ -->
+    
+    <!-- Bonusu lapa -->
+    <url>
+        <loc>https://myhotslots.com/bonuses/</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Casino atsauksmju lapa -->
+    <url>
+        <loc>https://myhotslots.com/reviews/</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Casino direktorija lapa -->
+    <url>
+        <loc>https://myhotslots.com/casinos/</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- ============================================ -->
+    <!-- INDIVIDUĀLĀS CASINO ATSAUKSMES -->
+    <!-- ============================================ -->
+    
+    <!-- Green Luck Casino -->
+    <url>
+        <loc>https://myhotslots.com/reviews/green-luck-casino.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://play-lh.googleusercontent.com/ZLo0nnZ4o7uMJo4J1G3BiFHZJkCHlOqMGD0pi7AikuBDpvtPb5WTgisbZHL5YoI92-A</image:loc>
+            <image:title>Green Luck Casino Review</image:title>
+        </image:image>
+    </url>
+
+    <!-- Metal Casino -->
+    <url>
+        <loc>https://myhotslots.com/reviews/metal-casino.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Gamblingo Casino -->
+    <url>
+        <loc>https://myhotslots.com/reviews/gamblingo-casino.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- BetMGM Casino -->
+    <url>
+        <loc>https://myhotslots.com/reviews/betmgm-casino.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Boho Casino -->
+    <url>
+        <loc>https://myhotslots.com/reviews/boho-casino.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ============================================ -->
+    <!-- ZIŅAS UN RAKSTI -->
+    <!-- ============================================ -->
+    
+    <url>
+        <loc>https://myhotslots.com/news/news.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myhotslots.com/news/fast-payouts.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myhotslots.com/news/gaming_trends.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myhotslots.com/news/canada_juniors.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://myhotslots.com/news/winning_is_knowing.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ============================================ -->
+    <!-- PIEVIENOJIET PAPILDU CASINO ATSAUKSMES ŠEIT -->
+    <!-- ============================================ -->
+    <!-- 
+    Kopējiet un pielāgojiet šo template katrai jaunai casino lapai:
+    
+    <url>
+        <loc>https://myhotslots.com/reviews/CASINO-NAME.html</loc>
+        <lastmod>YYYY-MM-DD</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>URL_UZ_CASINO_LOGO</image:loc>
+            <image:title>CASINO NOSAUKUMS Review</image:title>
+        </image:image>
+    </url>
+    -->
+
+</urlset>
+
+<!-- ============================================ -->
+<!-- INSTRUKCIJAS IZMANTOŠANAI: -->
+<!-- ============================================ -->
+<!-- 
+1. AUGŠUPIELĀDE:
+   - Augšupielādējiet šo failu uz: https://myhotslots.com/sitemap.xml
+   
+2. GOOGLE SEARCH CONSOLE:
+   - Dodieties uz: https://search.google.com/search-console
+   - Sitemaps → Add a new sitemap
+   - Ievadiet: https://myhotslots.com/sitemap.xml
+   - Noklikšķiniet "Submit"
+
+3. ATJAUNINĀŠANA:
+   - Atjauniniet <lastmod> datumu, kad maināt lapas saturu
+   - Pievienojiet jaunas <url> sekcijas, kad izveidojat jaunas lapas
+   - Noņemiet <url> sekcijas izdzēstām lapām
+   
+4. VALIDĀCIJA:
+   - Testējiet: https://www.xml-sitemaps.com/validate-xml-sitemap.html
+   - Vai: https://webmaster.yandex.com/tools/sitemap/
+
+5. PRIORITĀŠU VADLĪNIJAS:
+   - 1.0 = Sākumlapa
+   - 0.8-0.9 = Galvenās sekcijas un svarīgākās lapas
+   - 0.6-0.7 = Ziņas, blogi, vidēji svarīgas lapas
+   - 0.3-0.5 = Juridiskās lapas, footer lapas
+
+6. CHANGEFREQ VADLĪNIJAS:
+   - daily = Sākumlapa, bonusu lapas
+   - weekly = Casino atsauksmes, ziņas
+   - monthly = Par mums, kontakti
+   - yearly = Privātuma politika, noteikumi
+-->
+<!-- ============================================ -->
